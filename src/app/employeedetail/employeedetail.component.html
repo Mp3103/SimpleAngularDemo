@@ -1,0 +1,35 @@
+<p>employeedetail works!</p>
+
+
+<table class="table table-hover">
+
+    <thead class="thead-dark">  
+        <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Salary</td>
+            <td>Met Quata?</td>
+        </tr>
+
+    </thead>
+
+    <tbody>
+        <tr *ngFor ="let list of employeeList">
+            <td>
+                {{list.fname}}
+            </td>
+            <td>
+                {{list.lanme}}
+            </td>
+            <td>
+                {{list.salary | currency:'USD'}}
+            </td>
+            <td>
+                <div *ngIf="list.salary > 63500 ; else elseblock">Yes</div>
+                <ng-template #elseblock>No</ng-template>
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
